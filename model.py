@@ -52,7 +52,7 @@ print(f"Earthquake Magnitude RMSE: {rmse:.3f}")
 # ===========================
 # Step 4: Save Models (Optional)
 # ===========================
-joblib.dump(mag_model, "random_forest_regressor.pkl")
+joblib.dump(mag_model, "quake_mag_model_316MB.pkl")
 
 '''
 Jan 2011 to Jun 2025
@@ -69,3 +69,4 @@ Earthquake Magnitude MAE: 0.320
 Earthquake Magnitude MSE: 0.198
 Earthquake Magnitude RMSE: 0.445
 '''
+
