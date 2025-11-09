@@ -1,3 +1,4 @@
+import gzip
 import streamlit as st
 import joblib
 import numpy as np
@@ -9,8 +10,8 @@ import time
 from geopy.exc import GeocoderUnavailable, GeocoderServiceError
 
 # Load the trained model
-mag_model = joblib.load("quake_mag_model_316MB.pkl")
-
+with gzip.open("quake_mag_model_316MB.pkl.gz", "rb") as f:
+    mag_model = joblib.load(f)
 # --- Set Page Config ---
 st.set_page_config(page_title="Earthquake Magnitude Predictor", layout="wide")
 st.markdown("<style>.stApp {background-color:#f0f8ff;}</style>", unsafe_allow_html=True)
@@ -197,6 +198,7 @@ with col2:
     if submit:
         location = pd.DataFrame({'lat': [inp_latitude], 'lon': [inp_longitude]})
         st.map(location, zoom=6)
+
 
 
 
