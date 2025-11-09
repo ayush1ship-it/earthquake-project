@@ -7,4 +7,3 @@ datetime
 plotly
 scikit-learn
 matplotlib
-gzip
