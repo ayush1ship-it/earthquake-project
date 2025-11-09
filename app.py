@@ -9,7 +9,7 @@ import time
 from geopy.exc import GeocoderUnavailable, GeocoderServiceError
 
 # Load the trained model
-mag_model = joblib.load("random_forest_regressor.pkl")
+mag_model = joblib.load("quake_mag_model_316MB.pkl")
 
 # --- Set Page Config ---
 st.set_page_config(page_title="Earthquake Magnitude Predictor", layout="wide")
@@ -197,5 +197,6 @@ with col2:
     if submit:
         location = pd.DataFrame({'lat': [inp_latitude], 'lon': [inp_longitude]})
         st.map(location, zoom=6)
+
 
 
