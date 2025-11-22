@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import numpy as np
 import pandas as pd
-from geopy.geocoders import Nominatim
+from geopy.geocoders import Opencage
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 #from datetime
@@ -272,3 +272,4 @@ with col2:
     if submit:
         location = pd.DataFrame({'lat': [inp_latitude], 'lon': [inp_longitude]})
         st.map(location, zoom=6)
+
